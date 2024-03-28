@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://127.0.0.1:5500/bottle.html?number=2 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRUTH AND DARE </title>
+    <link rel="stylesheet" href="./TRUTH AND DARE_files/bottle.css">
+    
+    <style>
+        #outer {
+            padding: 20px 40px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table td, table th {
+            padding: 8px;
+            border: 1px solid black;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const number = parseInt(params.get("number"));
+    
+            switch (number) {
+                case 2:
+                    makeForTwo();
+                    break;
+                case 3:
+                    makeForThree();
+                    break;
+                case 4:
+                    makeForFour();
+                    break;
+                default:
+                    // Handle other cases if needed
+                    break;
+            }
+    
+            function makeForTwo() {
+                const parent = document.getElementById("outer");
+                const table = document.createElement("table");
+                const row = document.createElement("tr");
+                
+                const player1Col = document.createElement("th");
+                player1Col.style.width = "50%";
+                player1Col.style.textAlign = "left";
+                
+                const player1Div = document.createElement("div");
+                player1Div.style.width = "100%";
+                player1Div.textContent = "Player 1";
+                player1Col.appendChild(player1Div);
+                row.appendChild(player1Col);
+                
+                const player2Col = document.createElement("th");
+                player2Col.style.width = "50%";
+                player2Col.style.textAlign = "right";
+                const player2Div = document.createElement("div");
+                player2Div.style.width = "100%";
+                player2Div.textContent = "Player 2";
+                player2Col.appendChild(player2Div);
+                row.appendChild(player2Col);
+    
+                table.appendChild(row);
+                parent.appendChild(table);
+            }
+    
+            function makeForThree() {
+                const parent = document.getElementById("outer");
+                const table = document.createElement("table");
+                const row = document.createElement("tr");
+                for (let i = 1; i <= 3; i++) {
+                    const playerCol = document.createElement("th"); 
+                    const divElement = document.createElement("div");
+                    divElement.style.width = "300px";
+                   
+                    divElement.textContent = "Player"+i;
+                    playerCol.appendChild(divElement);
+                    row.appendChild(playerCol);
+                }
+                table.appendChild(row);
+                parent.appendChild(table);
+            }
+    
+            function makeForFour() {
+                const parent = document.getElementById("outer");
+                const table = document.createElement("table");
+                for (let j = 0; j < 2; j++) {
+                    const row = document.createElement("tr");
+                    for (let i = 1; i <= 2; i++) {
+                        const playerCol = document.createElement("th");
+                        const divElement = document.createElement("div");
+                        divElement.style.width = "300px";
+                        divElement.textContent = "Player" + (i + j);
+                        playerCol.appendChild(divElement);
+                        row.appendChild(playerCol);
+                    }
+                    table.appendChild(row);
+                }
+                parent.appendChild(table);
+            }
+        });
+    </script>
+    
+<script src="./TRUTH AND DARE_files/bottle.js.download"></script>
+    </head><body><div id="outer" class="outer">
+
+    <table><tr><th style="width: 50%; text-align: left;"><div style="width: 100%; height:570px;text-align:center; align-items:center; justify-content:center;
+
+    ">Player 1</div></th><th style="width: 50%; text-align: center;align-items:center;justify-content:center;
+    "><div style="width: 100%;">Player 2</div></th></tr></table></div>
+
+    <img src="./TRUTH AND DARE_files/bottle.png" alt="Bottle" id="bott" class="">
+    
+    <button class="spinn" onclick="spinBottle()">Spin</button>
+    
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+
+
+</body></html>

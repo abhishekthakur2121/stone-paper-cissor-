@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Paper Cisor Game</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <nav><h1>Stone Paper Scissor</h1></nav>
+    <div class="choices">
+        <div class="choice" id="rock">
+            <img src="./images/stone1.jpg" alt="rock">
+        </div>
+        <div class="choice" id="paper">
+            <img src="./images/paper.jpg" alt="paper">
+        </div>
+        <div class="choice" id="cisor">
+            <img src="./images/scissors1.jpg" alt="cisor">
+        </div>
+    </div>
+    <div class="score-board">
+        <div class="score">
+            <p id="user-score">0</p>
+            <p>YOUR SCORE</p>
+        </div>
+        <div class="score">
+            <p id="computer-score">0</p>
+            <p>COMPUTER SCORE</p>
+        </div>
+    </div>
+    <div class="container">
+       <div>
+
+      <p id="msg">Play Your Turn</p>
+    </div>
+   <div>
+    <button id="reset-btn">Reset Game</button>
+    <button id="hide-btn" style="display: none;">click</button>
+  </div>
+
+</div>
+<audio id="background-sound" src="./sounds/background.mp3" preload="auto" autoplay></audio>
+<!-- <audio id="background-sound" controls autoplay>
+    <source src="./sounds/background.mp3">
+</audio> -->
+<audio id="click-sound" src="./sounds/click.mp3.unknown" preload="auto"></audio>
+<audio id="win-sound" src="./sounds/win.mp3.unknown" preload="auto"></audio>
+<audio id="lose-sound" src="./sounds/lose.mp3.unknown" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
